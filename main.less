@@ -32,6 +32,9 @@
 
   .prop {
     display: inline-block;
+    &+.prop{
+      margin-left: 7px;
+    }
   }
 }
 
@@ -49,14 +52,15 @@
   }
 }
 
-
-.dx-treelist-text-content {
-  padding: 7px 0 0 46px;
+.dx-treelist-icon-container{
+  margin-top: 4px;
 }
 
 .commonfile {
   padding-left: 16px;
   position: relative;
+  margin-left: 12px;
+  margin-top: 8px;
 
   &:before {
     content: '';
@@ -70,7 +74,6 @@
     left: -7px;
     top: 0;
   }
-
 
   &:after {
     content: '';
@@ -86,6 +89,12 @@
   &.commonfile_status__green:after {
     background-image: url("icons/flag_green.svg");
   }
+  &.commonfile_status__yellow:after {
+    background-image: url("icons/flag_yellow.svg");
+  }
+  &.commonfile_status__red:after {
+    background-image: url("icons/flag_red.svg");
+  }
 
   .commonfile_type {
     text-transform: uppercase;
@@ -100,7 +109,9 @@
 
 
 .dx-command-edit {
-  text-align: left;
+  div{
+    text-align: left;
+  }
 
   a {
     display: inline-block;

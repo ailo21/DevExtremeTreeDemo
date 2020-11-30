@@ -43,12 +43,19 @@ $(function () {
                     $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
 
 
-                    var $props_file = $("<div>", {"class": "props"});
-                    $props_file.append("<div class='prop'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
-                    $wrapper.append($props_file);
+                    if(options.data.Task_FileName){
+                        var $props_file = $("<div>", {"class": "props"});
+                        $props_file.append("<div class='prop'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
+                        $wrapper.append($props_file);
+                    }
+
 
 
                     var $props = $("<div>", {"class": "props"});
+
+                    if(options.data.Task_Control){
+                        $props.append("<div class='prop'><div class='key'>Статус:</div><div class='value'>На контроле</div></div>");
+                    }
                     $props.append("<div class='prop'><div class='key'>Документ:</div><div class='value'>№" + options.data.Task_Num + " от " + options.data.Task_Date + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Срок исполнения:</div><div class='value'>" + options.data.Task_TimePerfomance + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Дата исполнения:</div><div class='value'>" + options.data.Task_DatePerfomance + "</div></div>");
@@ -81,24 +88,31 @@ $(function () {
                 type: "buttons",
                 buttons: [{
                     template: function () {
+                        var div = $("<div>", {});
                         var link = $("<a>").text("Закрыть")
                             .attr("href", "#");
                         // link.on("click", function() {
                         //     console.log("My command was clicked");
                         // });
-                        return link;
+                        div.append(link);
+                        return div;
                     }
                 }, {
                     template: function () {
+                        var div = $("<div>", {});
                         var link = $("<a>").text("Перенести срок")
                             .attr("href", "#");
-                        return link;
+
+                        div.append(link);
+                        return div;
                     }
                 }, {
                     template: function () {
+                        var div = $("<div>", {});
                         var link = $("<a>").text("Отменить исполенение")
                             .attr("href", "#");
-                        return link;
+                        div.append(link);
+                        return div;
                     }
                 }]
             }
@@ -129,7 +143,7 @@ var tasks = [{
     "Task_DatePerfomance": "-",
     "Task_FileName": "30.09-112(66).doc",
     "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
-    "Task_Status": "green",
+    "Task_Status": "none",
     "Task_Control": false,
     "Task_Parent_ID": 0
 },
@@ -143,7 +157,7 @@ var tasks = [{
         "Task_DatePerfomance": "-",
         "Task_FileName": "",
         "Task_FilePath": "",
-        "Task_Status": "green",
+        "Task_Status": "yellow",
         "Task_Control": true,
         "Task_Parent_ID": 1
     },
@@ -170,7 +184,7 @@ var tasks = [{
         "Task_DatePerfomance": "-",
         "Task_FileName": "30.09-112(66).doc",
         "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
-        "Task_Status": "green",
+        "Task_Status": "yellow",
         "Task_Parent_ID": 3
     },
 ];
