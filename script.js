@@ -68,32 +68,41 @@ $(function () {
             }, {
                 dataField: "Task_Type",
                 caption: 'Тип документа',
-                showInColumnChooser: true
+                showInColumnChooser: true,
+                visible: false
             }, {
                 dataField: "Task_Name",
                 caption: 'Наименование документа',
+                visible: false
             }, {
                 dataField: "Task_Num",
                 caption: 'Номер документа',
-                showInColumnChooser: true
+                showInColumnChooser: true,
+                visible: false
             }, {
                 dataField: "Task_Date",
                 caption: 'Дата докмениа',
+                visible: false
             }, {
                 dataField: "Task_Control",
                 caption: 'Контроль',
+                visible: false
             }, {
                 dataField: "Task_DatePerfomance",
                 caption: "Срок исполнения",
+                visible: false
             }, {
                 dataField: "Task_TimePerfomance",
-                caption: "Дата исполнения"
+                caption: "Дата исполнения",
+                visible: false
             }, {
                 dataField: "Task_Status",
                 caption: "Статус",
+                visible: false
             }, {
                 dataField: "dataField",
                 caption: "Файл",
+                visible: false,
                 cellTemplate: function (container, options) {
                     container.append($("<a>", {
                         "class": "file",
