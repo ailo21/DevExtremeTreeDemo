@@ -40,7 +40,9 @@ $(function () {
                 dataField: "Task_Name",
                 caption: 'Сведения',
                 allowSorting: false,
-                minWidth: 350,
+                // width: 900,
+                // minWidth:900,
+                maxWidth:900,
                 cellTemplate: function (container, options) {
                     var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Execution + " commonfile_type__" + options.data.Task_TypeName});
                     $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_TypeName) + "</div>");
@@ -114,6 +116,7 @@ $(function () {
             },
             {
                 type: "buttons",
+                minWidth: 50,
                 buttons: [
                     /*{
                     template: function () {
