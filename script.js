@@ -102,9 +102,11 @@ $(function () {
                         href: options.data.Task_FilePath
                     }))
                 }
-            }, {
+            },
+            {
                 type: "buttons",
-                buttons: [{
+                buttons: [
+                    /*{
                     template: function () {
                         var div = $("<div>", {});
                         var link = $("<a>").text("Закрыть")
@@ -113,7 +115,8 @@ $(function () {
                         div.append(link);
                         return div;
                     }
-                }, {
+                },*/
+                    {
                     template: function () {
                         var div = $("<div>", {});
                         var link = $("<a>").text("Перенести срок")
