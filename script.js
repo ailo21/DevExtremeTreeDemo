@@ -38,8 +38,8 @@ $(function () {
                 allowSorting: false,
                 minWidth: 300,
                 cellTemplate: function (container, options) {
-                    var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Status + " commonfile_type__" + options.data.Task_Type});
-                    $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_Type) + "</div>");
+                    var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Status + " commonfile_type__" + options.data.Task_TypeName});
+                    $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_TypeName) + "</div>");
                     $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
 
 
@@ -48,8 +48,6 @@ $(function () {
                         $props_file.append("<div class='prop'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
                         $wrapper.append($props_file);
                     }
-
-
 
                     var $props = $("<div>", {"class": "props"});
 
@@ -64,16 +62,34 @@ $(function () {
 
                     container.append($wrapper);
                 }
-            },
-            {
+            },{
+                dataField: "Task_Type",
+                caption: 'Тип документа',
+            },{
+                dataField: "Task_Name",
+                caption: 'Наименование документа',
+            },{
+                dataField: "Task_Num",
+                caption: 'Номер документа',
+            },{
+                dataField: "Task_Date",
+                caption: 'Дата докмениа',
+            },{
+                dataField: "Task_Control",
+                caption: 'Контроль',
+            },{
                 dataField: "Task_TimePerfomance",
                 caption: "Дата исполнения"
-            },
-            {
+            },{
                 dataField: "Task_DatePerfomance",
                 caption: "Срок исполнения",
-            },
-            {
+            },{
+                dataField: "Task_Status",
+                caption: "Статус",
+                cellTemplate: function (container,options){
+                    container.append("<div title='"+TaskStatusName(options.data.Task_Status)+"' class='doctype doctype__"+options.data.Task_Status+"'></div>")
+                }
+            },{
                 dataField: "dataField",
                 caption: "Файл",
                 cellTemplate: function (container, options) {
@@ -129,10 +145,21 @@ function getFileTypeName(type) {
     }
 
 }
+function  TaskStatusName(status){
+    switch (status){
+        case 'red':
+            return 'Срок исполнения сегодня или истек';
+        case 'yellow':
+            return 'До срока исполнения менее 3 дней';
+        case 'green':
+            return 'До срока исполнения более двух дней';
+    }
+}
 
 //http://asoft21.ru/img/icons/icon_flag_black.svg
 var tasks = [{
     "Task_ID": 1,
+    "Task_TypeName": "Протокол",
     "Task_Type": "Протокол",
     "Task_Num": 112,
     "Task_Date": '30.09.2020',
@@ -147,6 +174,7 @@ var tasks = [{
 },
     {
         "Task_ID": 2,
+        "Task_TypeName": "Выписка",
         "Task_Type": "Выписка",
         "Task_Num": 1.1,
         "Task_Date": '30.09.2020',
@@ -161,7 +189,8 @@ var tasks = [{
     },
     {
         "Task_ID": 3,
-        "Task_Type": "Поручение на документ № 1.1. от 30.09.2020",
+        "Task_TypeName": "Поручение на документ № 1.1. от 30.09.2020",
+        "Task_Type": "Поручение",
         "Task_Num": 112,
         "Task_Date": '30.09.2020',
         "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.1. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
@@ -175,6 +204,7 @@ var tasks = [{
     },
     {
         "Task_ID": 4,
+        "Task_TypeName": "Выписка",
         "Task_Type": "Выписка",
         "Task_Num": 1.2,
         "Task_Date": '30.09.2020',
@@ -189,7 +219,8 @@ var tasks = [{
     },
     {
         "Task_ID": 5,
-        "Task_Type": "Поручение на документ № 1.2. от 30.09.2020",
+        "Task_TypeName": "Поручение на документ № 1.2. от 30.09.2020",
+        "Task_Type": "Поручение",
         "Task_Num": 1.2,
         "Task_Date": '30.09.2020',
         "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.2. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.2. Яковлеву В.Г., Кучерявому И.Л.: - Совместно с Минэкономразвития Чувашии подать заявку по финансированию строительства паркинга (Мегаполис-отель). Срок: до 01.11.2020 ",
@@ -202,12 +233,4 @@ var tasks = [{
         "Task_Parent_ID": 4
     },
 
-];
-
-
-var priorities = [
-    {id: 1, value: "Low"},
-    {id: 2, value: "Normal"},
-    {id: 3, value: "Urgent"},
-    {id: 4, value: "High"}
 ];
