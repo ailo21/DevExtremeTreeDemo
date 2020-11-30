@@ -38,9 +38,11 @@ $(function () {
                 allowSorting: false,
                 minWidth: 300,
                 cellTemplate: function (container, options) {
-                    var $wrapper = $("<div>", {"class": "commonfile commonfile_status__"+options.data.Task_Status+" commonfile_type__" + options.data.Task_Type});
+                    var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Status + " commonfile_type__" + options.data.Task_Type});
+                    $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_Type) + "</div>");
+                    $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
+
                     var $props = $("<div>", {"class": "props"});
-                    $props.append("<div class='prop'><div class='key'>" + getFileTypeName(options.data.Task_Type) + ":</div><div class='value'>" + options.data.Task_Name + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Документ:</div><div class='value'>№" + options.data.Task_Num + " от " + options.data.Task_Date + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Срок исполнения:</div><div class='value'>" + options.data.Task_TimePerfomance + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Дата исполнения:</div><div class='value'>" + options.data.Task_DatePerfomance + "</div></div>");
@@ -69,10 +71,10 @@ $(function () {
                         href: options.data.Task_FilePath
                     }))
                 }
-            },{
+            }, {
                 type: "buttons",
                 buttons: [{
-                    template: function() {
+                    template: function () {
                         var link = $("<a>").text("Закрыть")
                             .attr("href", "#");
                         // link.on("click", function() {
@@ -80,14 +82,14 @@ $(function () {
                         // });
                         return link;
                     }
-                },{
-                    template: function() {
+                }, {
+                    template: function () {
                         var link = $("<a>").text("Перенести срок")
                             .attr("href", "#");
                         return link;
                     }
-                },{
-                    template: function() {
+                }, {
+                    template: function () {
                         var link = $("<a>").text("Отменить исполенение")
                             .attr("href", "#");
                         return link;
@@ -165,7 +167,7 @@ var tasks = [{
         "Task_Status": "green",
         "Task_Parent_ID": 3
     },
-    ];
+];
 
 
 var priorities = [
