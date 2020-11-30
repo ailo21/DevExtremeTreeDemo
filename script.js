@@ -102,6 +102,8 @@ function getFileTypeName(type) {
     switch (type) {
         case 'protocol':
             return "Протокол";
+        case 'vipiska':
+            return "Выписка";
         default:
             return type;
     }
@@ -120,6 +122,7 @@ var tasks = [{
     "Task_FileName": "30.09-112(66).doc",
     "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
     "Task_Status": "green",
+    "Task_Control": false,
     "Task_Parent_ID": 0
 },
     {
@@ -130,9 +133,10 @@ var tasks = [{
         "Task_Name": "Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
         "Task_TimePerfomance": "01.12.2020",
         "Task_DatePerfomance": "-",
-        "Task_FileName": "30.09-112(66).doc",
+        "Task_FileName": "",
         "Task_FilePath": "",
         "Task_Status": "green",
+        "Task_Control": true,
         "Task_Parent_ID": 1
     },
     {
