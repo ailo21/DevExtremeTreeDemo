@@ -35,29 +35,27 @@ $(function () {
             enabled: true
         },
         allowColumnReordering: true,
-
         columns: [
             {
                 dataField: "Task_Name",
                 caption: 'Сведения',
                 allowSorting: false,
-                minWidth: 300,
+                minWidth: 350,
                 cellTemplate: function (container, options) {
-                    var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Status + " commonfile_type__" + options.data.Task_TypeName});
+                    var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Execution + " commonfile_type__" + options.data.Task_TypeName});
                     $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_TypeName) + "</div>");
                     $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
 
-
-                    if(options.data.Task_FileName){
+                    if (options.data.Task_FileName) {
                         var $props_file = $("<div>", {"class": "props"});
-                        $props_file.append("<div class='prop'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
+                        $props_file.append("<div class='attach_file'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
                         $wrapper.append($props_file);
                     }
 
                     var $props = $("<div>", {"class": "props"});
 
-                    if(options.data.Task_Control){
-                        $props.append("<div class='prop'><div class='key'>Статус:</div><div class='value'>На контроле</div></div>");
+                    if (options.data.Task_Control) {
+                        $props.append("<div class='prop'><div class='doc_control'>K</div></div>");
                     }
                     $props.append("<div class='prop'><div class='key'>Документ:</div><div class='value'>№" + options.data.Task_Num + " от " + options.data.Task_Date + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Срок исполнения:</div><div class='value'>" + options.data.Task_TimePerfomance + "</div></div>");
@@ -67,34 +65,33 @@ $(function () {
 
                     container.append($wrapper);
                 }
-            },{
+            }, {
                 dataField: "Task_Type",
                 caption: 'Тип документа',
-            },{
+                showInColumnChooser: true
+            }, {
                 dataField: "Task_Name",
                 caption: 'Наименование документа',
-            },{
+            }, {
                 dataField: "Task_Num",
                 caption: 'Номер документа',
-            },{
+                showInColumnChooser: true
+            }, {
                 dataField: "Task_Date",
                 caption: 'Дата докмениа',
-            },{
+            }, {
                 dataField: "Task_Control",
                 caption: 'Контроль',
-            },{
-                dataField: "Task_TimePerfomance",
-                caption: "Дата исполнения"
-            },{
+            }, {
                 dataField: "Task_DatePerfomance",
                 caption: "Срок исполнения",
-            },{
+            }, {
+                dataField: "Task_TimePerfomance",
+                caption: "Дата исполнения"
+            }, {
                 dataField: "Task_Status",
                 caption: "Статус",
-                cellTemplate: function (container,options){
-                    container.append("<div title='"+TaskStatusName(options.data.Task_Status)+"' class='doctype doctype__"+options.data.Task_Status+"'></div>")
-                }
-            },{
+            }, {
                 dataField: "dataField",
                 caption: "Файл",
                 cellTemplate: function (container, options) {
@@ -150,8 +147,9 @@ function getFileTypeName(type) {
     }
 
 }
-function  TaskStatusName(status){
-    switch (status){
+
+function TaskStatusName(status) {
+    switch (status) {
         case 'red':
             return 'Срок исполнения сегодня или истек';
         case 'yellow':
@@ -161,7 +159,8 @@ function  TaskStatusName(status){
     }
 }
 
-//http://asoft21.ru/img/icons/icon_flag_black.svg
+
+//. на исполнении, на резолюции
 var tasks = [{
     "Task_ID": 1,
     "Task_TypeName": "Протокол",
@@ -173,7 +172,8 @@ var tasks = [{
     "Task_DatePerfomance": "-",
     "Task_FileName": "30.09-112(66).doc",
     "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
-    "Task_Status": "none",
+    "Task_Execution": "none",
+    "Task_Status": "новый",
     "Task_Control": false,
     "Task_Parent_ID": 0
 },
@@ -188,7 +188,8 @@ var tasks = [{
         "Task_DatePerfomance": "-",
         "Task_FileName": "",
         "Task_FilePath": "",
-        "Task_Status": "yellow",
+        "Task_Execution": "yellow",
+        "Task_Status": "новый",
         "Task_Control": true,
         "Task_Parent_ID": 1
     },
@@ -203,7 +204,8 @@ var tasks = [{
         "Task_DatePerfomance": "-",
         "Task_FileName": "",
         "Task_FilePath": "",
-        "Task_Status": "yellow",
+        "Task_Execution": "yellow",
+        "Task_Status": "новый",
         "Task_Control": true,
         "Task_Parent_ID": 2
     },
@@ -218,7 +220,8 @@ var tasks = [{
         "Task_DatePerfomance": "29.10.2020",
         "Task_FileName": "",
         "Task_FilePath": "",
-        "Task_Status": "green",
+        "Task_Execution": "green",
+        "Task_Status": "новый",
         "Task_Control": true,
         "Task_Parent_ID": 1
     },
@@ -233,7 +236,8 @@ var tasks = [{
         "Task_DatePerfomance": "29.10.2020",
         "Task_FileName": "",
         "Task_FilePath": "",
-        "Task_Status": "green",
+        "Task_Execution": "green",
+        "Task_Status": "новый",
         "Task_Control": true,
         "Task_Parent_ID": 4
     },
