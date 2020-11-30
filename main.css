@@ -110,6 +110,9 @@
 .dx-command-edit div {
   text-align: left;
 }
+.dx-command-edit div + div {
+  margin-top: 8px;
+}
 .dx-command-edit a {
   display: inline-block;
   background: #fff;

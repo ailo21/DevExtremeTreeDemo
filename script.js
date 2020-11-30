@@ -15,6 +15,10 @@ $(function () {
         columnAutoWidth: true,
         wordWrapEnabled: true,
         showBorders: true,
+        showRowLines: true,
+        columnFixing: {
+            enabled: true
+        },
         expandedRowKeys: [1, 2],
         selectedRowKeys: [1, 29, 42],
         searchPanel: {
@@ -31,6 +35,7 @@ $(function () {
             enabled: true
         },
         allowColumnReordering: true,
+
         columns: [
             {
                 dataField: "Task_Name",
