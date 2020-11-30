@@ -26,13 +26,15 @@
 
 .props {
   display: block;
-  &+.props{
+
+  & + .props {
     margin-top: 4px;
   }
 
   .prop {
     display: inline-block;
-    .prop:not(:last-child){
+
+    .prop:not(:last-child) {
       margin-right: 7px;
     }
   }
@@ -51,9 +53,11 @@
     display: inline;
   }
 }
-.attach_file{
+
+.attach_file {
   position: relative;
-  &:before{
+
+  &:before {
     content: '';
     display: inline-block;
     width: 9px;
@@ -65,18 +69,21 @@
     top: 0;
     left: -21px;
   }
-  .key{
+
+  .key {
     text-transform: uppercase;
     font-size: 10px;
     font-weight: bold;
   }
-  .value{
+
+  .value {
     text-transform: uppercase;
     font-size: 13px;
   }
 
 }
-.dx-treelist-icon-container{
+
+.dx-treelist-icon-container {
   margin-top: 4px;
 }
 
@@ -113,9 +120,11 @@
   &.commonfile_status__green:after {
     background-image: url("icons/flag_green.svg");
   }
+
   &.commonfile_status__yellow:after {
     background-image: url("icons/flag_yellow.svg");
   }
+
   &.commonfile_status__red:after {
     background-image: url("icons/flag_red.svg");
   }
@@ -126,34 +135,38 @@
     font-weight: bold;
     margin-bottom: 4px;
   }
-  .commonfile_name{
+
+  .commonfile_name {
     margin-bottom: 5px;
   }
 }
 
-.doctype{
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
+.doctype {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
 
-  &.doctype__green{
+  &.doctype__green {
     background-image: url("icons/flag_green.svg");
   }
-  &.doctype__yellow{
+
+  &.doctype__yellow {
     background-image: url("icons/flag_yellow.svg");
   }
-  &.doctype__red{
+
+  &.doctype__red {
     background-image: url("icons/flag_red.svg");
   }
 
 }
 
 .dx-command-edit {
-  div{
+  div {
     text-align: left;
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-bottom: 4px;
     }
 
@@ -182,7 +195,7 @@
 }
 
 
-.doc_control{
+.doc_control {
   display: inline-block;
   border: 2px solid rgba(155, 4, 4, 0.4);
   color: #9B0404;
@@ -191,3 +204,18 @@
   padding: 0 3px 0 2px;
   margin-right: 15px;
 }
+
+.dx-treelist-rowsview {
+  .dx-treelist-empty-space {
+    width: 26px;
+  }
+  .dx-treelist-collapsed,
+  .dx-treelist-expanded {
+    span {
+      position: absolute;
+      top: 10px;
+    }
+  }
+}
+
+

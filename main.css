@@ -162,4 +162,12 @@
   padding: 0 3px 0 2px;
   margin-right: 15px;
 }
+.dx-treelist-rowsview .dx-treelist-empty-space {
+  width: 26px;
+}
+.dx-treelist-rowsview .dx-treelist-collapsed span,
+.dx-treelist-rowsview .dx-treelist-expanded span {
+  position: absolute;
+  top: 10px;
+}
 /*# sourceMappingURL=main.css.map */
