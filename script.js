@@ -42,6 +42,12 @@ $(function () {
                     $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_Type) + "</div>");
                     $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
 
+
+                    var $props_file = $("<div>", {"class": "props"});
+                    $props_file.append("<div class='prop'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
+                    $wrapper.append($props_file);
+
+
                     var $props = $("<div>", {"class": "props"});
                     $props.append("<div class='prop'><div class='key'>Документ:</div><div class='value'>№" + options.data.Task_Num + " от " + options.data.Task_Date + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Срок исполнения:</div><div class='value'>" + options.data.Task_TimePerfomance + "</div></div>");

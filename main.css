@@ -20,6 +20,15 @@
   border: 1px solid lightgray;
   background-color: #fff;
 }
+.props {
+  display: block;
+}
+.props + .props {
+  margin-top: 4px;
+}
+.props .prop {
+  display: inline-block;
+}
 .prop .key {
   color: #425A97;
   font-style: italic;
@@ -67,6 +76,9 @@
   font-size: 10px;
   font-weight: bold;
   margin-bottom: 4px;
+}
+.commonfile .commonfile_name {
+  margin-bottom: 5px;
 }
 .dx-command-edit {
   text-align: left;
