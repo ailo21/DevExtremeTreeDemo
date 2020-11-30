@@ -5,6 +5,12 @@ body,
 #tasks {
   max-height: 540px;
 }
+.up-text {
+  text-transform: uppercase;
+}
+.low-text {
+  text-transform: lowercase;
+}
 #tasks .dx-treelist-rowsview td {
   vertical-align: middle;
 }
@@ -26,14 +32,10 @@ body,
 }
 .props {
   display: block;
-}
-.props + .props {
-  margin-top: 4px;
+  margin-bottom: 8px;
 }
 .props .prop {
   display: inline-block;
-}
-.props .prop .prop:not(:last-child) {
   margin-right: 7px;
 }
 .prop .key {
@@ -113,12 +115,12 @@ body,
 }
 .commonfile .commonfile_type {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
   margin-bottom: 4px;
 }
 .commonfile .commonfile_name {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 .doctype {
   width: 18px;
@@ -180,5 +182,28 @@ body,
 .dx-treelist-rowsview .dx-treelist-expanded span {
   position: absolute;
   top: 10px;
+}
+.props_fromto {
+  color: #1D4099;
+  margin-bottom: 4px;
+}
+.arrow_fromto {
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  background-image: url("./icons/arr_right.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 10px;
+}
+.props_answer div {
+  display: inline-block;
+  font-size: 14px;
+}
+.props_answer .key {
+  padding-right: 5px;
+}
+.props_answer .value {
+  color: #1D4099;
 }
 /*# sourceMappingURL=main.css.map */

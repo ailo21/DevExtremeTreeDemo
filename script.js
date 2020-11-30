@@ -45,21 +45,34 @@ $(function () {
                 maxWidth:900,
                 cellTemplate: function (container, options) {
                     var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Execution + " commonfile_type__" + options.data.Task_TypeName});
-                    $wrapper.append("<div class='commonfile_type'>" + getFileTypeName(options.data.Task_TypeName) + "</div>");
+                    $wrapper.append("<div class='commonfile_type'>" + options.data.Task_TypeName +" №"+options.data.Task_Num+"&nbsp;&nbsp;&nbsp;    <span class='low-text'>от</span> "+options.data.Task_Date + "</div>");
                     $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
 
+                    //файл
                     if (options.data.Task_FileName) {
                         var $props_file = $("<div>", {"class": "props"});
                         $props_file.append("<div class='attach_file'><div class='key'>Прикрепленные файлы:</div><div class='value'><a target='_blank' href='" + options.data.Task_FilePath + "'>" + options.data.Task_FileName + "</a></div></div>");
                         $wrapper.append($props_file);
                     }
+                    //овет
+                    if(options.data.Task_Answer){
+                        var $props_answer = $("<div>", {"class": "props"});
+                        $props_answer.append("<div class='props_answer'><div class='key'>Ответ: </div><div class='value'>"+options.data.Task_Answer+"</div></div>");
+                        $wrapper.append($props_answer);
+                    }
+                    //от коко и кому
+                    if(options.data.Task_From || options.data.Task_To){
+                        var $props_fromto = $("<div>", {"class": "props"});
+                        $props_fromto.append(`<div class='props_fromto'><span>${options.data.Task_From}</span><span class="arrow_fromto"></span><span>${options.data.Task_To}</span></div>`);
+                        $wrapper.append($props_fromto);
+                    }
 
                     var $props = $("<div>", {"class": "props"});
 
                     if (options.data.Task_Control) {
-                        $props.append("<div class='prop'><div class='doc_control'>K</div></div>");
+                        $props.append("<div class=' prop'><div class='doc_control'>K</div></div>");
                     }
-                    $props.append("<div class='prop'><div class='key'>Документ:</div><div class='value'>№" + options.data.Task_Num + " от " + options.data.Task_Date + "</div></div>");
+
                     $props.append("<div class='prop'><div class='key'>Срок исполнения:</div><div class='value'>" + options.data.Task_TimePerfomance + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Дата исполнения:</div><div class='value'>" + options.data.Task_DatePerfomance + "</div></div>");
 
@@ -160,7 +173,6 @@ function getFileTypeName(type) {
         default:
             return type;
     }
-
 }
 
 function TaskStatusName(status) {
@@ -179,7 +191,7 @@ function TaskStatusName(status) {
 var tasks = [{
     "Task_ID": 1,
     "Task_TypeName": "Протокол",
-    "Task_Type": "Протокол",
+    "Task_Type": "protocol",
     "Task_Num": 112,
     "Task_Date": '30.09.2020',
     "Task_Name": "по результатам совещания по реализуемым в 2020 году проектам",
@@ -210,9 +222,12 @@ var tasks = [{
     },
     {
         "Task_ID": 3,
-        "Task_TypeName": "Поручение на документ № 1.1. от 30.09.2020",
+        "Task_TypeName": "Поручение на документ № 1.1.",
         "Task_Type": "Поручение",
         "Task_Num": 112,
+        "Task_Answer": "Документ № 2.1. от 30.09.2020",
+        "Task_From": "Администрация г.Чебоксары",
+        "Task_To":"МБУ ЖКХиБ от 30.09.2020 ",
         "Task_Date": '30.09.2020',
         "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.1. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
         "Task_TimePerfomance": "01.12.2020",

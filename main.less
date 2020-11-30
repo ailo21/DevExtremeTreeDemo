@@ -1,9 +1,17 @@
-body,.dx-widget{
+body, .dx-widget {
   font-family: 'Open Sans', sans-serif;
 }
 
 #tasks {
   max-height: 540px;
+}
+
+.up-text {
+  text-transform: uppercase;
+}
+
+.low-text {
+  text-transform: lowercase;
 }
 
 #tasks .dx-treelist-rowsview td {
@@ -30,17 +38,11 @@ body,.dx-widget{
 
 .props {
   display: block;
-
-  & + .props {
-    margin-top: 4px;
-  }
+  margin-bottom: 8px;
 
   .prop {
     display: inline-block;
-
-    .prop:not(:last-child) {
-      margin-right: 7px;
-    }
+    margin-right: 7px;
   }
 }
 
@@ -136,13 +138,13 @@ body,.dx-widget{
 
   .commonfile_type {
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     margin-bottom: 4px;
   }
 
   .commonfile_name {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 }
 
@@ -185,7 +187,8 @@ body,.dx-widget{
     padding: 4px 17px 6px;
     color: #04139B;
     text-decoration: none;
-    &:hover{
+
+    &:hover {
       border: 1px solid #04139B
     }
 
@@ -196,13 +199,15 @@ body,.dx-widget{
 
   }
 }
-.dx-selection{
-  .dx-command-edit{
-    div{
-      a{
+
+.dx-selection {
+  .dx-command-edit {
+    div {
+      a {
         background: #fff;
         border: 1px solid #fff;
-        &:hover{
+
+        &:hover {
           border: 1px solid #04139B
         }
       }
@@ -225,6 +230,7 @@ body,.dx-widget{
   .dx-treelist-empty-space {
     width: 26px;
   }
+
   .dx-treelist-collapsed,
   .dx-treelist-expanded {
     span {
@@ -234,4 +240,31 @@ body,.dx-widget{
   }
 }
 
+.props_fromto{
+  color: #1D4099;
+  margin-bottom: 4px;
+}
+.arrow_fromto {
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  background-image: url("./icons/arr_right.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 10px;
+}
 
+.props_answer {
+  div {
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .key {
+    padding-right: 5px;
+  }
+
+  .value {
+    color: #1D4099;
+  }
+}
