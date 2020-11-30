@@ -91,9 +91,7 @@ $(function () {
                         var div = $("<div>", {});
                         var link = $("<a>").text("Закрыть")
                             .attr("href", "#");
-                        // link.on("click", function() {
-                        //     console.log("My command was clicked");
-                        // });
+
                         div.append(link);
                         return div;
                     }
@@ -135,7 +133,7 @@ function getFileTypeName(type) {
 //http://asoft21.ru/img/icons/icon_flag_black.svg
 var tasks = [{
     "Task_ID": 1,
-    "Task_Type": "protocol",
+    "Task_Type": "Протокол",
     "Task_Num": 112,
     "Task_Date": '30.09.2020',
     "Task_Name": "по результатам совещания по реализуемым в 2020 году проектам",
@@ -149,7 +147,7 @@ var tasks = [{
 },
     {
         "Task_ID": 2,
-        "Task_Type": "vipiska",
+        "Task_Type": "Выписка",
         "Task_Num": 1.1,
         "Task_Date": '30.09.2020',
         "Task_Name": "Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
@@ -163,30 +161,47 @@ var tasks = [{
     },
     {
         "Task_ID": 3,
-        "Task_Type": "protocol",
+        "Task_Type": "Поручение на документ № 1.1. от 30.09.2020",
         "Task_Num": 112,
         "Task_Date": '30.09.2020',
-        "Task_Name": "по результатам совещания по реализуемым в 2020 году проектам",
-        "Task_TimePerfomance": "-",
+        "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.1. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
+        "Task_TimePerfomance": "01.12.2020",
         "Task_DatePerfomance": "-",
-        "Task_FileName": "30.09-112(66).doc",
-        "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
-        "Task_Status": "green",
-        "Task_Parent_ID": 0
+        "Task_FileName": "",
+        "Task_FilePath": "",
+        "Task_Status": "yellow",
+        "Task_Control": true,
+        "Task_Parent_ID": 2
     },
     {
         "Task_ID": 4,
-        "Task_Type": "vipiska",
-        "Task_Num": 113,
+        "Task_Type": "Выписка",
+        "Task_Num": 1.2,
         "Task_Date": '30.09.2020',
-        "Task_Name": "по результатам совещания по реализуемым в 2020 году проектам",
-        "Task_TimePerfomance": "01.12.2020",
-        "Task_DatePerfomance": "-",
-        "Task_FileName": "30.09-112(66).doc",
-        "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
-        "Task_Status": "yellow",
-        "Task_Parent_ID": 3
+        "Task_Name": "Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
+        "Task_TimePerfomance": "30.10.2020",
+        "Task_DatePerfomance": "29.10.2020",
+        "Task_FileName": "",
+        "Task_FilePath": "",
+        "Task_Status": "green",
+        "Task_Control": true,
+        "Task_Parent_ID": 1
     },
+    {
+        "Task_ID": 5,
+        "Task_Type": "Поручение на документ № 1.2. от 30.09.2020",
+        "Task_Num": 1.2,
+        "Task_Date": '30.09.2020',
+        "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.2. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.2. Яковлеву В.Г., Кучерявому И.Л.: - Совместно с Минэкономразвития Чувашии подать заявку по финансированию строительства паркинга (Мегаполис-отель). Срок: до 01.11.2020 ",
+        "Task_TimePerfomance": "30.10.2020",
+        "Task_DatePerfomance": "29.10.2020",
+        "Task_FileName": "",
+        "Task_FilePath": "",
+        "Task_Status": "green",
+        "Task_Control": true,
+        "Task_Parent_ID": 4
+    },
+
 ];
 
 
