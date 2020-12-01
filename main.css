@@ -156,8 +156,39 @@ body,
 .dx-command-edit a:hover {
   border: 1px solid #04139B;
 }
-.dx-command-edit a + a {
-  margin-left: 5px;
+.button_link {
+  display: inline-block;
+  background: #EBEBEB;
+  border: 1px solid #EBEBEB;
+  border-radius: 50px;
+  padding: 4px 17px 6px;
+  color: #04139B;
+  text-decoration: none;
+}
+.button_link:hover {
+  border: 1px solid #04139B;
+}
+.invert_link {
+  background: #fff;
+  border: 1px solid #fff;
+}
+.invert_link:hover {
+  border: 1px solid #04139B;
+}
+.buttons_area a {
+  display: inline-block;
+  background: #EBEBEB;
+  border: 1px solid #EBEBEB;
+  border-radius: 50px;
+  padding: 4px 17px 6px;
+  color: #04139B;
+  text-decoration: none;
+}
+.buttons_area a:hover {
+  border: 1px solid #04139B;
+}
+.buttons_area a {
+  margin: 0 5px;
 }
 .dx-selection .dx-command-edit div a {
   background: #fff;
@@ -205,5 +236,11 @@ body,
 }
 .props_answer .value {
   color: #1D4099;
+}
+.dx-treelist-select-all .dx-checkbox {
+  margin-top: 7px;
+}
+.dx-treelist-icon-container.dx-editor-inline-block .dx-checkbox {
+  margin-top: -4px;
 }
 /*# sourceMappingURL=main.css.map */

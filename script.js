@@ -28,9 +28,9 @@ $(function () {
         headerFilter: {
             visible: true
         },
-        // selection: {
-        //     mode: "multiple"
-        // },
+        selection: {
+            mode: "multiple"
+        },
         columnChooser: {
             enabled: true
         },
@@ -43,6 +43,14 @@ $(function () {
                 dataField: "Task_Name",
                 caption: 'Сведения',
                 allowSorting: false,
+                allowFiltering: false,
+                headerCellTemplate: function (header, info) {
+                    var $buttons_area = $('<div>', {class: "buttons_area"});
+                    $buttons_area.append("<a>Закрыть</a>");
+                    $buttons_area.append("<a>Перенести срок</a>");
+                    $buttons_area.append("<a>Отменить исполнение</a>");
+                    header.append($buttons_area);
+                },
                 // width: 900,
                 // minWidth:900,
                 // maxWidth:900,
@@ -101,7 +109,7 @@ $(function () {
                 dataField: "Task_Date",
                 caption: 'Дата документа',
                 visible: false
-            },  {
+            }, {
                 dataField: "Task_Year",
                 caption: 'Год регистрации',
                 visible: false
