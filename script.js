@@ -34,6 +34,9 @@ $(function () {
         columnChooser: {
             enabled: true
         },
+        sorting: {
+            mode: "multiple"
+        },
         allowColumnReordering: true,
         columns: [
             {
@@ -42,10 +45,10 @@ $(function () {
                 allowSorting: false,
                 // width: 900,
                 // minWidth:900,
-                maxWidth:900,
+                // maxWidth:900,
                 cellTemplate: function (container, options) {
                     var $wrapper = $("<div>", {"class": "commonfile commonfile_status__" + options.data.Task_Execution + " commonfile_type__" + options.data.Task_TypeName});
-                    $wrapper.append("<div class='commonfile_type'>" + options.data.Task_TypeName +" №"+options.data.Task_Num+"&nbsp;&nbsp;&nbsp;    <span class='low-text'>от</span> "+options.data.Task_Date + "</div>");
+                    $wrapper.append("<div class='commonfile_type'>" + options.data.Task_TypeName + " №" + options.data.Task_Num + "&nbsp;&nbsp;&nbsp;    <span class='low-text'>от</span> " + options.data.Task_Date + "</div>");
                     $wrapper.append("<div class='commonfile_name'>" + options.data.Task_Name + "</div>");
 
                     //файл
@@ -55,13 +58,13 @@ $(function () {
                         $wrapper.append($props_file);
                     }
                     //овет
-                    if(options.data.Task_Answer){
+                    if (options.data.Task_Answer) {
                         var $props_answer = $("<div>", {"class": "props"});
-                        $props_answer.append("<div class='props_answer'><div class='key'>Ответ: </div><div class='value'>"+options.data.Task_Answer+"</div></div>");
+                        $props_answer.append("<div class='props_answer'><div class='key'>Ответ: </div><div class='value'>" + options.data.Task_Answer + "</div></div>");
                         $wrapper.append($props_answer);
                     }
                     //от коко и кому
-                    if(options.data.Task_From || options.data.Task_To){
+                    if (options.data.Task_From || options.data.Task_To) {
                         var $props_fromto = $("<div>", {"class": "props"});
                         $props_fromto.append(`<div class='props_fromto'><span>${options.data.Task_From}</span><span class="arrow_fromto"></span><span>${options.data.Task_To}</span></div>`);
                         $wrapper.append($props_fromto);
@@ -96,7 +99,11 @@ $(function () {
                 visible: false
             }, {
                 dataField: "Task_Date",
-                caption: 'Дата докмениа',
+                caption: 'Дата документа',
+                visible: false
+            },  {
+                dataField: "Task_Year",
+                caption: 'Год регистрации',
                 visible: false
             }, {
                 dataField: "Task_Control",
@@ -142,23 +149,23 @@ $(function () {
                     }
                 },*/
                     {
-                    template: function () {
-                        var div = $("<div>", {});
-                        var link = $("<a>").text("Перенести срок")
-                            .attr("href", "#");
+                        template: function () {
+                            var div = $("<div>", {});
+                            var link = $("<a>").text("Перенести срок")
+                                .attr("href", "#");
 
-                        div.append(link);
-                        return div;
-                    }
-                }, {
-                    template: function () {
-                        var div = $("<div>", {});
-                        var link = $("<a>").text("Отменить исполенение")
-                            .attr("href", "#");
-                        div.append(link);
-                        return div;
-                    }
-                }]
+                            div.append(link);
+                            return div;
+                        }
+                    }, {
+                        template: function () {
+                            var div = $("<div>", {});
+                            var link = $("<a>").text("Отменить исполенение")
+                                .attr("href", "#");
+                            div.append(link);
+                            return div;
+                        }
+                    }]
             }
         ]
     });
@@ -194,6 +201,7 @@ var tasks = [{
     "Task_Type": "protocol",
     "Task_Num": 112,
     "Task_Date": '30.09.2020',
+    "Task_Year": "2020",
     "Task_Name": "по результатам совещания по реализуемым в 2020 году проектам",
     "Task_TimePerfomance": "-",
     "Task_DatePerfomance": "-",
@@ -210,6 +218,7 @@ var tasks = [{
         "Task_Type": "Выписка",
         "Task_Num": 1.1,
         "Task_Date": '30.09.2020',
+        "Task_Year": "2020",
         "Task_Name": "Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
         "Task_TimePerfomance": "01.12.2020",
         "Task_DatePerfomance": "-",
@@ -227,8 +236,9 @@ var tasks = [{
         "Task_Num": 112,
         "Task_Answer": "Документ № 2.1. от 30.09.2020",
         "Task_From": "Администрация г.Чебоксары",
-        "Task_To":"МБУ ЖКХиБ от 30.09.2020 ",
+        "Task_To": "МБУ ЖКХиБ от 30.09.2020 ",
         "Task_Date": '30.09.2020',
+        "Task_Year": "2020",
         "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.1. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
         "Task_TimePerfomance": "01.12.2020",
         "Task_DatePerfomance": "-",
@@ -245,6 +255,7 @@ var tasks = [{
         "Task_Type": "Выписка",
         "Task_Num": 1.2,
         "Task_Date": '30.09.2020',
+        "Task_Year": "2020",
         "Task_Name": "Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.1. Белову О.Г.: - Ввести в эксплуатацию объект реконструкции Московской набережной у Свято-Троицкого монастыря. Срок: до 01.12.2020 ",
         "Task_TimePerfomance": "30.10.2020",
         "Task_DatePerfomance": "29.10.2020",
@@ -261,6 +272,7 @@ var tasks = [{
         "Task_Type": "Поручение",
         "Task_Num": 1.2,
         "Task_Date": '30.09.2020',
+        "Task_Year": "2020",
         "Task_Name": "Поручение. Протокол № 112 от 30.09.2020 пункт 1.2. I. Инвестиционный проект «Туристский кластер «Чувашия – сердце Волги» (Ростуризм). 1.2. Яковлеву В.Г., Кучерявому И.Л.: - Совместно с Минэкономразвития Чувашии подать заявку по финансированию строительства паркинга (Мегаполис-отель). Срок: до 01.11.2020 ",
         "Task_TimePerfomance": "30.10.2020",
         "Task_DatePerfomance": "29.10.2020",
