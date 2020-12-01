@@ -140,6 +140,7 @@ body,
 }
 .dx-command-edit div {
   text-align: left;
+  margin: 3px 0;
 }
 .dx-command-edit div:not(:last-child) {
   margin-bottom: 4px;
@@ -175,6 +176,9 @@ body,
 .row_link:hover {
   border-bottom: 1px solid #04139B;
 }
+.dx-selection .dx-command-edit div {
+  margin: 3px 0;
+}
 .dx-selection .dx-command-edit div a {
   color: #04139B;
   text-decoration: none;
@@ -191,6 +195,9 @@ body,
   line-height: 14px;
   padding: 0 3px 0 2px;
   margin-right: 15px;
+}
+.doc_control.doc_control__removed {
+  opacity: 0.4;
 }
 .dx-treelist-rowsview .dx-treelist-empty-space {
   width: 26px;

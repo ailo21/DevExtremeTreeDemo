@@ -55,7 +55,7 @@
       <workItem from="1606484470597" duration="1781000" />
       <workItem from="1606572546841" duration="982000" />
       <workItem from="1606712875158" duration="26703000" />
-      <workItem from="1606799517196" duration="6873000" />
+      <workItem from="1606799517196" duration="9873000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1606572569100</created>
@@ -183,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606804335135</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="WIP 17">
+      <created>1606808911710</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1606808911710</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,13 +214,14 @@
     <MESSAGE value="WIP 14" />
     <MESSAGE value="WIP 15" />
     <MESSAGE value="WIP 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP 16" />
+    <MESSAGE value="WIP 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP 17" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="652" y="0" key="CommitChangelistDialog2" timestamp="1606804334309">
+    <state x="652" y="0" key="CommitChangelistDialog2" timestamp="1606808910766">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="652" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606804334309" />
+    <state x="652" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606808910766" />
     <state x="815" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606746703888" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606808860352">
       <screen x="0" y="0" width="1536" height="824" />
@@ -223,10 +231,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="438" y="191" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1606716756371" />
-    <state x="620" y="75" key="Vcs.Push.Dialog.v2" timestamp="1606804339560">
+    <state x="571" y="115" key="RollbackChangesDialog" timestamp="1606808901926">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="620" y="75" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606804339560" />
+    <state x="571" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606808901926" />
+    <state x="620" y="75" key="Vcs.Push.Dialog.v2" timestamp="1606808916730">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="620" y="75" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606808916730" />
     <state x="775" y="95" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606746707950" />
     <state x="451" y="46" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606758731396">
       <screen x="0" y="0" width="1536" height="824" />

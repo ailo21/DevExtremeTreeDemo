@@ -80,9 +80,17 @@ $(function () {
 
                     var $props = $("<div>", {"class": "props"});
 
-                    if (options.data.Task_Control) {
-                        $props.append("<div class=' prop'><div class='doc_control'>K</div></div>");
+
+                    if (options.data.Task_Control!="none"){
+                        if (options.data.Task_Control=="на контроле") {
+                            $props.append("<div class='prop'><div class='doc_control'>K</div></div>");
+                        }
+                        else if(options.data.Task_Control=="снят с контроля"){
+                            $props.append("<div class='prop'><div class='doc_control doc_control__removed'>K</div></div>");
+                        }
                     }
+
+
 
                     $props.append("<div class='prop'><div class='key'>Срок исполнения:</div><div class='value'>" + options.data.Task_TimePerfomance + "</div></div>");
                     $props.append("<div class='prop'><div class='key'>Дата исполнения:</div><div class='value'>" + options.data.Task_DatePerfomance + "</div></div>");
@@ -216,7 +224,7 @@ var tasks = [{
     "Task_FilePath": "https://old.gcheb.delo.cap.ru/edit/01CD_files/file.asp?id={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&link={C3F2E44E-7823-44AE-9486-31FCFE5C1409}&preurl=in_doc&FKey=doc_id",
     "Task_Execution": "none",
     "Task_Status": "новый",
-    "Task_Control": false,
+    "Task_Control": "none",
     "Task_Parent_ID": 0
 },
     {
@@ -233,7 +241,7 @@ var tasks = [{
         "Task_FilePath": "",
         "Task_Execution": "yellow",
         "Task_Status": "новый",
-        "Task_Control": true,
+        "Task_Control": "снят с контроля",
         "Task_Parent_ID": 1
     },
     {
@@ -253,7 +261,7 @@ var tasks = [{
         "Task_FilePath": "",
         "Task_Execution": "yellow",
         "Task_Status": "новый",
-        "Task_Control": true,
+        "Task_Control": "на контроле",
         "Task_Parent_ID": 2
     },
     {
@@ -270,7 +278,7 @@ var tasks = [{
         "Task_FilePath": "",
         "Task_Execution": "green",
         "Task_Status": "новый",
-        "Task_Control": true,
+        "Task_Control": "на контроле",
         "Task_Parent_ID": 1
     },
     {
@@ -287,7 +295,7 @@ var tasks = [{
         "Task_FilePath": "",
         "Task_Execution": "green",
         "Task_Status": "новый",
-        "Task_Control": true,
+        "Task_Control": "на контроле",
         "Task_Parent_ID": 4
     },
 
