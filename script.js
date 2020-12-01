@@ -144,18 +144,17 @@ $(function () {
             },
             {
                 type: "buttons",
-                minWidth: 50,
+                minWidth: 180,
                 buttons: [
-                    /*{
-                    template: function () {
-                        var div = $("<div>", {});
-                        var link = $("<a>").text("Закрыть")
-                            .attr("href", "#");
-
-                        div.append(link);
-                        return div;
-                    }
-                },*/
+                    // {
+                    //     template: function () {
+                    //         var div = $("<div>", {});
+                    //         var link = $("<a>").text("Закрыть").attr("href", "#");
+                    //
+                    //         div.append(link);
+                    //         return div;
+                    //     }
+                    // },
                     {
                         template: function () {
                             var div = $("<div>", {});

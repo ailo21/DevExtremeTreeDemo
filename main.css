@@ -145,35 +145,12 @@ body,
   margin-bottom: 4px;
 }
 .dx-command-edit a {
-  display: inline-block;
-  background: #EBEBEB;
-  border: 1px solid #EBEBEB;
-  border-radius: 50px;
-  padding: 4px 17px 6px;
   color: #04139B;
   text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 .dx-command-edit a:hover {
-  border: 1px solid #04139B;
-}
-.button_link {
-  display: inline-block;
-  background: #EBEBEB;
-  border: 1px solid #EBEBEB;
-  border-radius: 50px;
-  padding: 4px 17px 6px;
-  color: #04139B;
-  text-decoration: none;
-}
-.button_link:hover {
-  border: 1px solid #04139B;
-}
-.invert_link {
-  background: #fff;
-  border: 1px solid #fff;
-}
-.invert_link:hover {
-  border: 1px solid #04139B;
+  border-bottom: 1px solid #04139B;
 }
 .buttons_area a {
   display: inline-block;
@@ -190,12 +167,21 @@ body,
 .buttons_area a {
   margin: 0 5px;
 }
+.row_link {
+  color: #04139B;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.row_link:hover {
+  border-bottom: 1px solid #04139B;
+}
 .dx-selection .dx-command-edit div a {
-  background: #fff;
-  border: 1px solid #fff;
+  color: #04139B;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 .dx-selection .dx-command-edit div a:hover {
-  border: 1px solid #04139B;
+  border-bottom: 1px solid #04139B;
 }
 .doc_control {
   display: inline-block;
